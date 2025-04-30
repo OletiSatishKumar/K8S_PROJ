@@ -1,0 +1,18 @@
+replicaCount: 2
+
+image:
+  repository: your-docker-username/flowershop
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: flowershop.example.com
+      paths:
+        - /

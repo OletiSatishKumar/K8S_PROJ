@@ -1,0 +1,22 @@
+db.orders.find().pretty()
+db.products.find().pretty()
+db.carts.find().pretty()
+show collections
+use AFF-Docker
+show dbs
+db.products.find().pretty()
+db.products.insertMany([ { _id: ObjectId("66c05db51cb576984c581d1b"), name: "Tulip", description: "Colorful tulips for a cheerful bouquet", price: 7, __v: 0 }, { _id: ObjectId("66c05df81cb576984c581d1e"), name: "Sunflower", description: "Bright sunflowers that radiate positivity", price: 12, __v: 0 }, { _id: ObjectId("66c05e521cb576984c581d21"), name: "Lily", description: "Elegant lilies with a soothing scent", price: 15, __v: 0 }, { _id: ObjectId("66c05e7c1cb576984c581d26"), name: "Orchid", description: "Exotic orchids for a touch of luxury", price: 20, __v: 0 }] )
+db.products.find().pretty()
+show collections
+db.products.insertOne({ _id: ObjectId("66c051191cb576984c581d11"), name: "Rose", description: "Red rose with a rich fragrance", price: 10, __v: 0 })
+show collections
+db.flowers.drop()
+show collections
+db.flowers.insertOne({ _id: ObjectId("66c051191cb576984c581d11"), name: "Rose", description: "Red rose with a rich fragrance", price: 10, __v: 0 })
+show collections
+use AFF-Docker
+show dbs
+db.sellers.find().pretty()
+show collections
+use AFF-Docker
+show dbs

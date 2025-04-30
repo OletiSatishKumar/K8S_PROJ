@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flowershop-app
+  namespace: argocd  # Ensure this is the ArgoCD namespace
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/your-github-repo/flowershop'  # Replace with your Infra Repo
+    targetRevision: HEAD  # Track the latest commit or use a specific branch/tag
+    path: helm/flowershop  # Path to your Helm chart
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: flowershop  # Deploy to the flowershop namespace
+  syncPolicy:
+    automated:
+      prune: true  # Automatically delete resources no longer in repo
+      selfHeal: true  # Automatically sync if a drift happens
+    syncOptions:
+      - CreateNamespace=true  # Create the namespace if it doesn't exist

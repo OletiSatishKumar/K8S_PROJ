@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flowershop
+  labels:
+    app: flowershop
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: flowershop
+  template:
+    metadata:
+      labels:
+        app: flowershop
+    spec:
+      containers:
+        - name: flowershop
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 8080

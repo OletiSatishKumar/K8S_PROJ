@@ -1,0 +1,5 @@
+replicas: 2
+
+image:
+  repository: satishosk/floweshop
+  tag: "20250430060516-9bcde61"
